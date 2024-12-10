@@ -39,18 +39,21 @@ print_greeting()
 
 def check_letter():
     # Your control flow logic goes here
-    letters = input("Enter a letter: ").lower()
+    letters = input("Enter a letter: ").swapcase()
     print(f"The user entered the letter {letters}")
 
     for letter in letters:
         if letter == 'a' and 'e' and 'i' and 'o' and 'u':
             print(f"The letter '{letters} is a vowel.'")
-        elif type(letter) == int or float:
-            print(f"{letter} is a number. Please enter a letter.")
-            # prints out consonants & words...need to fix
-            # How to print floating num 1 time/no repeats?  Circle back....  
-        elif  len(letters) > len(letter):
+        elif len(letters) > len(letter) and type(letter) != str:
             print(f"{letters} is invalid. Please enter a letter.")
+            #
+            # Prints lenght of characters entered...
+            # How to print 1 time/no repeats?  Circle back....
+            # ANSWER: Looping through each letter -> causes multi-line prints
+            #   
+        # elif type(letter) == int:
+        #     print(f"'{letters}' is also invalid. Try again.")
         else:
             print(f"The letter '{letters}' is a consonant.")
 
