@@ -39,23 +39,56 @@ print_greeting()
 
 def check_letter():
     # Your control flow logic goes here
+    vowel = [ "a", "e", "i", "o", "u"]
+
     letters = input("Enter a letter: ").swapcase()
     print(f"The user entered the letter {letters}")
 
     for letter in letters:
         if letter == 'a' and 'e' and 'i' and 'o' and 'u':
             print(f"The letter '{letters} is a vowel.'")
-        elif len(letters) > len(letter) and type(letter) != str:
-            print(f"{letters} is invalid. Please enter a letter.")
-            #
-            # Prints lenght of characters entered...
-            # How to print 1 time/no repeats?  Circle back....
-            # ANSWER: Looping through each letter -> causes multi-line prints
-            #   
-        # elif type(letter) == int:
+        elif len(letters) > len(letter) or type(letter) == type(int):
+            print(f"{letters} is invalid. Please enter a letter.")  
+            break
+        # elif type(letter) == type(int):
         #     print(f"'{letters}' is also invalid. Try again.")
         else:
             print(f"The letter '{letters}' is a consonant.")
 
 # Call the function
-check_letter()
+# check_letter()
+
+
+# Exercise 2: Old enough to vote?
+#
+# Write a Python function named `check_voting_eligibility` that determines if a user is old enough to vote.
+# Fill in the logic to perform the eligibility check inside the function.
+#
+# Function Details:
+# - Prompt the user to input their age: "Please enter your age: "
+# - Validate the input to ensure the age is a possible value (no negative numbers).
+# - Determine if the user is eligible to vote. Set a variable for the voting age.
+# - Print a message indicating whether the user is eligible to vote based on the entered age.
+#
+# Hints:
+# - Use the `input()` function to capture the user's age.
+# - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
+# - Use a conditional statement to check if the age meets the minimum voting age requirement.
+
+def check_voting_eligibility():
+    # Your control flow logic goes here
+    voting_age = 18
+
+    age = int(input("Enter your age: "))
+    print(f"You have entered {age} years old")
+
+    if age < voting_age and age > 0:
+        print(f"{age} years old is too young to vote. You have to wait till your 18.")
+    elif age <= 0:
+        print(f"Technically speaking, you should not exist, since you are {age} years old.")
+    else:
+        print(f"Huzzah! You are {age} years old. You can vote!")
+    
+
+# Call the function
+check_voting_eligibility()
