@@ -138,12 +138,12 @@ def calculate_dog_years():
 
 def weather_advice():
     # Your control flow logic goes here
-    cold_weather = input("Is it cold outside? (yes/no)").swapcase()
-    raining_weather = input("Is it raining outside? (yes/no)").swapcase()
+    cold_weather = input("Is it cold outside? (yes/no)").lower()
+    raining_weather = input("Is it raining outside? (yes/no)").lower()
 
-    if cold_weather == "yes" or "y" or raining_weather == "yes" or "y":
+    if cold_weather == "yes" or raining_weather == "yes":
         print("Wear a waterproof coat.")
-    elif cold_weather == "yes" and "y" and raining_weather == "no" and "n":
+    elif cold_weather == "yes" and raining_weather == "no":
         print("Wear a warm coat.")
     elif cold_weather == "no" and raining_weather == "yes":
         print("Carry an umbrella.")
