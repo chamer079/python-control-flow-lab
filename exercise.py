@@ -38,18 +38,18 @@ print_greeting()
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
 def check_letter():
-    letters = input("Enter a letter: ").swapcase()
+    letters = input("Enter a letter: ").swapcase()  #<- swapcase() - swaps lower for upper and vice versa
     print(f"The user entered the letter {letters}")
    
     if letters == 'a' and 'e' and 'i' and 'o' and 'u':
         print(f"The s '{letters}' is a vowel.'")
-    elif len(letters) != 1 or not letters.isalpha():
+    elif len(letters) != 1 or not letters.isalpha():    #<- isalpha() - checks for int, symbols, empty characters
         print(f"{letters} is invalid. Please enter a letter.")  
     else:
-            print(f"The letter '{letters}' is a consonant.")
+        print(f"The letter '{letters}' is a consonant.")
 
 # Call the function
-check_letter()
+# check_letter()
 
 
 # Exercise 2: Old enough to vote?
@@ -78,7 +78,7 @@ def check_voting_eligibility():
     if age < voting_age and age > 0:
         print(f"{age} years old is too young to vote. You have to wait till your 18.")
     elif age <= 0:
-        print(f"Technically speaking, you should not exist, since you are {age} years old.")
+        print(f"Technically...you should not exist, since you are {age} years old.")
     else:
         print(f"Huzzah! You are {age} years old. You can vote!")
     
@@ -118,3 +118,37 @@ def calculate_dog_years():
 
 # Call the function
 # calculate_dog_years()
+
+
+# Exercise 4: Weather Advice
+#
+# Write a Python script named `weather_advice` that provides clothing advice based on weather conditions.
+#
+# Requirements:
+# - The script should prompt the user to enter if it is cold (yes/no).
+# - Then, ask if it is raining (yes/no).
+# - Use logical operators to determine clothing advice:
+#   - If it is cold AND raining, print "Wear a waterproof coat."
+#   - If it is cold BUT NOT raining, print "Wear a warm coat."
+#   - If it is NOT cold but raining, print "Carry an umbrella."
+#   - If it is NOT cold AND NOT raining, print "Wear light clothing."
+#
+# Hints:
+# - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
+
+def weather_advice():
+    # Your control flow logic goes here
+    cold_weather = input("Is it cold outside? (yes/no)").swapcase()
+    raining_weather = input("Is it raining outside? (yes/no)").swapcase()
+
+    if cold_weather == "yes" or "y" or raining_weather == "yes" or "y":
+        print("Wear a waterproof coat.")
+    elif cold_weather == "yes" and "y" and raining_weather == "no" and "n":
+        print("Wear a warm coat.")
+    elif cold_weather == "no" and raining_weather == "yes":
+        print("Carry an umbrella.")
+    else:
+        print("Wear light clothing.")
+
+# Call the function
+weather_advice()
