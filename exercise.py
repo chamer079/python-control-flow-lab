@@ -177,22 +177,18 @@ def determine_season():
     # Your control flow logic goes here
     month = input("Enter a month: (Jan - Dec)").lower()
     date = int(input("Enter the day of the month: "))
+    
+    # valid_months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
 
-    if date <= 0 and date >= 32:
-        print("This is an invalid date. Please enter a valid date.")
-    elif month == "dec" and date >= 21 or month == "jan" or month == "feb" and month == "mar" and date <= 19:
-        print(f"{month} {date} is in Winter")
-    elif month == "mar" and date >= 20 or month == "apr" or month == "may" and month == "jun" and date <= 20:
-        print(f"{month} {date} is in Spring")
-    elif month == "jun" and date >= 21 or month == "jul" or month == "aug" and month == "sep" and date <= 21:
-        print(f"{month} {date} is in Summer")
-    elif month == "sept" and date >= 22 or month == "oct" or month == "nov" and month == "dec" and date <= 20:
-        print(f"{month} {date} is in Fall")
-
- 
-
-
-
+    if (month == "dec" and date >= 21) or ("jan" or "feb" in month) or (month == "mar" and date <= 19):
+        season = "Winter"
+    elif (month == "mar" and date >= 20) or ("apr" or "may" in month) or (month == "jun" and date <= 20):
+        season = "Spring"
+    elif (month == "jun" and date >= 21) or ("jul" or "aug" in month) and (month == "sep" and date <= 21):
+        season = "Summer"
+    elif (month == "sept" and date >= 22) or ("oct" or "nov" in month) and (month == "dec" and date <= 20):
+        season = "Fall"
+    print(f"{month} {date} is in {season}")
 
 # Call the function
 determine_season()
