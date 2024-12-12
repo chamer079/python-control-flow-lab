@@ -178,7 +178,15 @@ def determine_season():
     month = input("Enter a month: (Jan - Dec)").lower()
     date = int(input("Enter the day of the month: "))
     
-    # valid_months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+    valid_months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+
+    if month not in valid_months:
+        print(f"{month} is not a valid month. Pleae enter a valid month - 3 letter abbreviasion only")
+        return
+
+    if date <= 0 or date >= 32:
+        print(f"{date} is a fictional date. Please enter an actual date.")
+        return
 
     if (month == "dec" and date >= 21) or (month == "jan") or (month == "feb") or (month == "mar" and date <= 19):
         season = "Winter"
