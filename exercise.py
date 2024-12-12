@@ -180,13 +180,13 @@ def determine_season():
     
     # valid_months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
 
-    if (month == "dec" and date >= 21) or ("jan" or "feb" in month) or (month == "mar" and date <= 19):
+    if (month == "dec" and date >= 21) or (month == "jan") or (month == "feb") or (month == "mar" and date <= 19):
         season = "Winter"
-    elif (month == "mar" and date >= 20) or ("apr" or "may" in month) or (month == "jun" and date <= 20):
+    elif (month == "mar" and date >= 20) or (month == "apr") or (month == "may") or (month == "jun" and date <= 20):
         season = "Spring"
-    elif (month == "jun" and date >= 21) or ("jul" or "aug" in month) and (month == "sep" and date <= 21):
+    elif (month == "jun" and date >= 21) or (month == "jul") or (month == "aug") or (month == "sep" and date <= 21):
         season = "Summer"
-    elif (month == "sept" and date >= 22) or ("oct" or "nov" in month) and (month == "dec" and date <= 20):
+    elif (month == "sept" and date >= 22) or (month == "oct") or (month == "nov") or (month == "dec" and date <= 20):
         season = "Fall"
     print(f"{month} {date} is in {season}")
 
